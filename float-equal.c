@@ -1,15 +1,23 @@
-//å®ç°ä»£ç åˆ¤æ–­2ä¸ªfloatå˜é‡ç›¸ç­‰
-//è¯¯å·®ç²¾ç¡®åˆ°æ—¶å°æ•°ç‚¹å5ä½
+//ÊµÏÖ´úÂëÅĞ¶Ï2¸öfloat±äÁ¿ÏàµÈ
+//Îó²î¾«È·µ½Ê±Ğ¡Êıµãºó5Î»
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    float m = 1.78;
-    float x = 1.779999, y = 2;
-    float z = m / y, z1 = x / y;
-    if (z == z1) {
-        z = (m + x) / y;
+    float m,n;
+    printf("Enter two float numbers(m n):");
+    scanf("%f %f",&m,&n);
+
+    float differ;
+    differ = fabs(m-n);
+    
+    if (differ <= 0.00001) 
+	{
+        printf("equal\n");
     }
-    printf("Z is %f\n", z);
-    printf("Z1 is %f\n", z1);
+    else
+    	printf("unequal\n");
+    printf("M is %.5f\n", m);
+    printf("N is %.5f\n", n);
     return 0;
-}
+} 

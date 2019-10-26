@@ -1,8 +1,28 @@
-//ä¸€ä¸ªæ—…è¡Œç¤¾æœ‰ 72 äººï¼Œå…¶ä¸­ä¼šè‹±è¯­çš„æœ‰ 48 äººï¼Œä¼šä¿„è¯­çš„æœ‰ 36 äººï¼Œä¸¤æ ·éƒ½ä¸ä¼šçš„æœ‰ 8 äººï¼Œä¸¤æ ·éƒ½ä¼šçš„æœ‰
-//_______ä¸ªã€‚
-//ç¼–ç¨‹ï¼šè¾“å…¥æ—…è¡Œç¤¾æœ‰72äºº
-//     è¾“å…¥ä¼šè‹±è¯­48äºº
-//     è¾“å…¥ä¼šä¿„è¯­36äºº
-//     è¾“å…¥ä¸¤æ ·éƒ½ä¸ä¼šæœ‰8äºº
-//     è¾“å‡ºä¸¤æ ·éƒ½ä¼šçš„æœ‰   äºº 
-//     è¾“å‡ºï¼šè¾“å…¥æ•°æ®é”™è¯¯ï¼Œæ— æ³•è®¡ç®—
+//Ò»¸öÂÃÐÐÉçÓÐ 72 ÈË£¬ÆäÖÐ»áÓ¢ÓïµÄÓÐ 48 ÈË£¬»á¶íÓïµÄÓÐ 36 ÈË£¬Á½Ñù¶¼²»»áµÄÓÐ 8 ÈË£¬Á½Ñù¶¼»áµÄÓÐ
+//_______¸ö¡£
+//±à³Ì£ºÊäÈëÂÃÐÐÉçÓÐ72ÈË
+//     ÊäÈë»áÓ¢Óï48ÈË
+//     ÊäÈë»á¶íÓï36ÈË
+//     ÊäÈëÁ½Ñù¶¼²»»áÓÐ8ÈË
+//     Êä³öÁ½Ñù¶¼»áµÄÓÐ   ÈË 
+//     Êä³ö£ºÊäÈëÊý¾Ý´íÎó£¬ÎÞ·¨¼ÆËã
+#include<stdio.h>
+int main(void)
+{
+	int a,e,r,n,c;
+	printf("Enter the total number: ");
+	scanf("%d",&a);
+	printf("Enter the English number: ");
+	scanf("%d",&e);
+	printf("Enter the Russia number: ");
+	scanf("%d",&r);
+	printf("Enter the unability number: ");
+	scanf("%d",&n);
+	c=(n + e + r -a);
+	if(c>e || c>r)
+		printf("Input Error");
+	else
+		printf("There are %d people can do the both",c);
+	
+	
+} 

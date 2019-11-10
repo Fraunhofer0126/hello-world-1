@@ -3,25 +3,29 @@
 //f(1) = 1。
 //求另一个f(n)=n的n值
 #include<stdio.h>
+#include<stdbool.h>
 int main(void)
 {
-	int f,n,t,g,re=0,i;
-	printf("Enter the value of \"n\": " );
-	scanf("%d",&n);
-	for(i=1;i<=n;i++)
+	int n,p,q,count=0,i,j,k;
+	bool ju=true;
+	for(n=2;ju;n++)
 	{
-		if(i<10)
-			g=i;
-		else{
-			t=i/10;
-			g=i-t*10;
+		p=n;
+		for(q=0;p!=0;q++)
+		{
+			p=p/10;
 		}
-		if(g==1){
-			re+=1;
+		p=n;
+		for(i=0;i<q;i++)
+		{
+			j=p%10;
+			if(j==1)
+				count++;
+			p=p/10;
 		}
-		if(t==1){
-			re+=1;
-		}
+		if(n==count+1)
+			ju=false;
 	}
-	printf("result: %d",re);
- } 
+	printf("%d",count+1);
+	return 0;
+} 

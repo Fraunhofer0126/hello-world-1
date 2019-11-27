@@ -1,2 +1,62 @@
-//è¶…çº§ç´ æ•°ï¼šå®ƒæœ¬èº«ï¼Œå„ä½æ•°å­—çš„å’Œï¼Œå„ä½æ•°å­—çš„å¹³æ–¹å’Œï¼Œéƒ½æ˜¯ç´ æ•°ã€‚
-//æ±‚ 100~10000 å†…çš„æ‰€æœ‰è¶…çº§ç´ æ•°ï¼ŒåŠå®ƒä»¬çš„å¹³å‡æ•°ã€‚
+//³¬¼¶ËØÊý£ºËü±¾Éí£¬¸÷Î»Êý×ÖµÄºÍ£¬¸÷Î»Êý×ÖµÄÆ½·½ºÍ£¬¶¼ÊÇËØÊý¡£
+//Çó 100~10000 ÄÚµÄËùÓÐ³¬¼¶ËØÊý£¬¼°ËüÃÇµÄÆ½¾ùÊý¡£
+#include<stdio.h>
+#include<stdbool.h>
+bool prime(int n)
+{
+	int i;
+	for(i=2;i<n;i++)
+	{
+		if(n%i==0)
+			break;
+	}
+	if(i<n-1)
+		return false;
+	else
+		return true;
+}
+int main(void)
+{
+	int time=0;
+	int sum=0;
+	int n,i,p,q,t,site;
+	int a[6]={0};
+	bool ju1=false,ju2=false,ju3=false;
+	for(n=100;n<=10000;n++)
+	{
+		ju1=false,ju2=false,ju3=false;
+		t=10;p=n;
+		for(i=0;p!=0;i++)
+			p=p/10;
+		q=i;site=i;p=n;
+		for(i=0;i<site;i++)
+		{
+			a[i]=p%t/(t/10);
+			p=p-a[i];
+			t=t*10;
+		}					//½«nÃ¿Ò»Î»´æ½øÊý×é 
+		
+		if(prime(n))
+			ju1=true;
+		int sum1=0,sum2=0;
+		for(i=0;i<site;i++)
+			sum1+=a[i];
+		if(prime(sum1))
+			ju2=true;
+		for(i=0;i<site;i++)
+			sum2+=a[i]*a[i];
+		if(prime(sum2))
+			ju3=true;
+							//ÅÐ¶ÏÈý²½Öè 
+		if(ju1&&ju2&&ju3){
+			printf("%d\n",n);
+			time++;
+			sum+=n;
+		}
+		
+		for(i=0;i<site;i++)	//free a[i]
+			a[i]=0; 
+	}
+	printf("Average is :%d",sum/time);
+	return 0;
+} 
